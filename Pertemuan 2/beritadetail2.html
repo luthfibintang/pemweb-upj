@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Dashboard</title>
+</head>
+<body>
+  <header>
+    <nav class="bg-gray-800">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div class="flex flex-shrink-0 items-center">
+              <!-- <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company"> -->
+            </div>
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="flex space-x-4">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="dashboard.html" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Dashboard</a>
+                <!-- <a href="contact.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a> -->
+                <a href="about.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+              </div>
+            </div>
+          </div>
+          <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+              <span class="absolute -inset-1.5"></span>
+              <span class="sr-only">View notifications</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+              </svg>
+            </button>
+    
+            <!-- Profile dropdown -->
+            <div class="relative ml-3">
+              <div>
+                <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                  <span class="absolute -inset-1.5"></span>
+                  <span class="sr-only">Open user menu</span>
+                  <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <section>
+    <div class="flex justify-center mt-10">
+      <img src="img/img2.jpg" alt="image1" class="w-[400px] h-[400px] object-cover">
+    </div>
+    <div class="max-w-4xl mx-auto py-5 bg-white text-gray-900">
+      <!-- Title, similar to article headings in Medium -->
+      <h1 class="text-4xl font-bold leading-tight mb-6">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h1>
+    
+      <!-- Meta Information -->
+      <div class="text-gray-500 text-sm mb-8">
+        <span>Jane Doe</span> · <span>September 13, 2024</span>
+      </div>
+    
+      <!-- Content paragraphs -->
+      <p class=" leading-relaxed mb-6">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque posuere ipsum non nulla sodales, eu fringilla dolor aliquam. Cras ornare tellus massa, eu pellentesque dui viverra ac. Curabitur eu semper orci. Curabitur tempor lorem in tempor eleifend. Nulla tristique ultricies libero sed feugiat. Nam magna nunc, tincidunt sit amet neque nec, efficitur sagittis velit. Proin nec lectus sit amet ipsum bibendum efficitur. Ut interdum mauris in magna iaculis tincidunt. Suspendisse facilisis a libero quis dapibus. Sed at quam ac mauris condimentum commodo. Donec tempus, dolor sit amet rutrum auctor, justo risus fermentum magna, non molestie velit ipsum sed justo. Aliquam tempus maximus libero eu faucibus. Vivamus id cursus magna, eget eleifend felis. In et orci nec turpis suscipit sagittis.
+      </p>
+      <p class=" leading-relaxed mb-6">
+        Aenean ac turpis porta, fringilla libero non, facilisis mi. Vestibulum in tincidunt tortor. Mauris dignissim fringilla justo, vel fermentum eros volutpat vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas mi leo, pulvinar id consequat at, ornare et mauris. Duis sit amet libero ullamcorper neque finibus ultrices non et enim. Ut suscipit tempus sapien. Aenean tempus ipsum lectus, vitae cursus erat varius ac. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi iaculis eros ut dui ornare fringilla. Nullam vel magna nulla. In et lobortis leo, at tincidunt neque. Proin eget lectus lorem. Fusce dapibus consequat mauris, id pharetra lorem vehicula nec. Nulla ultrices justo eget est malesuada elementum. Aenean sem urna, bibendum ut urna et, maximus venenatis odio.      
+      </p>
+      <p class=" leading-relaxed mb-6">
+        Suspendisse ut eros sed nunc egestas placerat. Cras elit odio, dictum quis magna nec, lacinia mollis urna. Curabitur eget pellentesque risus, a finibus sapien. Nam sollicitudin pellentesque mollis. Cras rhoncus augue risus, nec maximus nisi dignissim nec. Donec facilisis cursus purus id ultrices. Nunc eget urna scelerisque, congue felis non, fringilla orci. Ut rhoncus, nibh ac molestie bibendum, libero turpis iaculis sem, pellentesque laoreet libero mi ac lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+      </p>
+      <p class=" leading-relaxed mb-6">
+        Phasellus porta erat in ullamcorper hendrerit. Etiam magna nisl, pharetra lobortis congue ut, cursus at est. Aenean posuere, sapien nec consequat pretium, risus lorem vehicula tortor, eu eleifend dui mauris sed velit. Aliquam nec mi justo. Donec vulputate, sem ut accumsan elementum, arcu arcu lacinia massa, at eleifend lacus felis congue risus. Sed semper ornare arcu sit amet ornare. Praesent tellus felis, sodales eu lacus vitae, dapibus rutrum nunc. Fusce hendrerit aliquam eros in elementum. Sed convallis erat nisi, id tempor ipsum tristique quis. Maecenas tincidunt, velit quis congue facilisis, ex magna congue purus, et porttitor lectus nisi sed risus. Curabitur leo nunc, pretium id sapien in, sodales eleifend augue.
+      </p>
+      <p class=" leading-relaxed mb-6">
+        Suspendisse ut eros sed nunc egestas placerat. Cras elit odio, dictum quis magna nec, lacinia mollis urna. Curabitur eget pellentesque risus, a finibus sapien. Nam sollicitudin pellentesque mollis. Cras rhoncus augue risus, nec maximus nisi dignissim nec. Donec facilisis cursus purus id ultrices. Nunc eget urna scelerisque, congue felis non, fringilla orci. Ut rhoncus, nibh ac molestie bibendum, libero turpis iaculis sem, pellentesque laoreet libero mi ac lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+      </p>
+    </div>
+    
+  </section>
+  <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+  <footer class="bg-white">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-4 mb-5">
+          <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+              <div class="sm:flex sm:items-center">
+                  <span class="text-sm sm:text-center">© 2023 <a href="#" class="hover:underline">Copyright.</a>. All Rights Reserved.
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Recomended Link</h2>
+                    <ul class="text-gray-500 font-medium">
+                        <li class="mb-4">
+                            <a href="https://www.google.com/" class="hover:underline">Google</a>
+                        </li>
+                        <li>
+                            <a href="https://upj.ac.id/" class="hover:underline">UPJ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Follow me</h2>
+                    <ul class="text-gray-500 font-medium">
+                        <li class="mb-4">
+                            <a href="https://github.com/luthfibintang" target="_blank" class="hover:underline ">Github</a>
+                        </li>
+                        <li>
+                            <a href="https://instagram/luthfibintang8" target="_blank" class="hover:underline">Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Legal</h2>
+                    <ul class="text-gray-500 font-medium">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+  </footer>
+  
+  <div></div>
+</body>
+</html>
