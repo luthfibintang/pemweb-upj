@@ -6,20 +6,21 @@
     ["url" => "https://instagram/luthfibintang3", "text" => "Instagram"]
   ];
 
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "pemweb_db";
+  include 'connection.php';
 
-  // Create connection
-  $conn = mysqli_connect($servername, $username, $password, $dbname);
+  function concatHobbies($hobbies) {
+      $count = count($hobbies);
 
-  // Check connection
-  if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+      if ($count === 1) {
+          return $hobbies[0];
+      } elseif ($count === 2) {
+          return implode(' dan ', $hobbies);
+      } else {
+          $lastHobby = array_pop($hobbies); 
+          return implode(', ', $hobbies) . ', dan ' . $lastHobby;
+      }
   }
 
-  $fullname = $email = $phone = $message = "";
   $confirmationMessage = "";
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -29,18 +30,20 @@
       $email = $_POST['email'];
       $phone = $_POST['phone'];
       $message = $_POST['message'];
+      $hobbies = $_POST['hobbies'];
+      $birthday = $_POST['birthday'];
 
-      // Prepare statement to prevent SQL injection
-      $stmt = $conn->prepare("INSERT INTO kontak (fullname, email, phone, message) VALUES (?, ?, ?, ?)");
-      $stmt->bind_param($fullname, $email, $phone, $message);
+      $sql = "INSERT INTO kontak (fullname, email, phone, `message`, hobby, birthday) 
+      VALUES ('$fullname', '$email', '$phone', '$message', '$hobbies', '$birthday')";
 
-      if ($stmt->execute()) {
+
+      // Execute the query
+      if (mysqli_query($conn, $sql)) {
         $confirmationMessage = "New record created successfully";
       } else {
-        $confirmationMessage = "Error: " . $stmt->error;
+        $confirmationMessage = "Error: " . $sql . "<br>" . mysqli_error($conn);
       }
 
-      $stmt->close();
     } else {
       // This is the initial form submission
       $fullname = htmlspecialchars($_POST['fullname']);
@@ -48,9 +51,12 @@
       $phone = htmlspecialchars($_POST['phone']);
       $message = htmlspecialchars($_POST['message']);
       $hobbies = $_POST['hobbies'];
+      $strHobby = concatHobbies($hobbies);
+      $birthday = $_POST['birthday'];
+      $displayBirthday = date('d F Y', strtotime($birthday));
     }
   } else {
-    header('Location: http://localhost/pemweb-upj/pertemuan%204/contact.php');
+    header('Location: http://localhost/pemweb-upj/pertemuan%206/contact.php');
     exit;
   }
 
@@ -92,15 +98,14 @@
                 <?php if(!empty($hobbies)): ?>
                   <p><strong>Hobby:</strong>
                     <?php 
-                      for($i = 0; $i < count($hobbies); $i++){
-                        if(count($hobbies) == 1){
-                          echo "$hobbies[$i]";
-                        } else if($i == count($hobbies)-1){
-                          echo "dan $hobbies[$i]";
-                        } else {
-                          echo "$hobbies[$i], ";
-                        }
-                      }
+                      echo  $strHobby;
+                    ?>
+                  </p>
+                <?php endif; ?>
+                <?php if(!empty($hobbies)): ?>
+                  <p><strong>Birthday:</strong>
+                    <?php 
+                      echo  $displayBirthday;
                     ?>
                   </p>
                 <?php endif; ?>
@@ -113,6 +118,8 @@
                   <input type="hidden" name="email" value="<?php echo $email; ?>">
                   <input type="hidden" name="phone" value="<?php echo $phone; ?>">
                   <input type="hidden" name="message" value="<?php echo $message; ?>">
+                  <input type="hidden" name="hobbies" value="<?php echo $strHobby ?>">
+                  <input type="hidden" name="birthday" value="<?php echo $birthday ?>">
                   <input type="hidden" name="confirm" value="1">
                   <input type="submit" value="Confirm Information" class="btn btn-primary">
                 </form>
